@@ -1,0 +1,47 @@
+{% extends 'songapp/base.html' %}
+{%load static%}
+{% block title %}Login{% endblock %}
+
+
+{% for message in messages %}
+    
+ <div class="alert alert-success">
+     <a class="close" href="#" data-dismiss="alert"></a>
+        {{ message }}
+ </div>
+{%endfor%}
+<div style="background-color:lightgreytext-align:center; ">
+{% block body%}
+
+<div class="container mt-5" syle="padding-top:8%; ">
+    <h2> Login here....</h2>
+    <form class="row g-3" method="POST" action="/songs/login/">{% csrf_token %}
+
+        <div class="col-md-7">
+            <label for="validationServerUsername" class="form-label" >Username</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend3">@</span>
+              <input type="text" class="form-control " name="loginuser" id="loginuser" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+             
+            </div>
+        </div>
+            <div class="col-md-7">
+      <label for="validationServer05" class="form-label">Password</label>
+      <input type="Password" class="form-control " id="loginpassword" aria-describedby="validationServer05Feedback" name="loginpassword" required>
+    </div>
+    <div>
+        <br/>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
+</div>
+
+{% endblock%}
+</div>
+
+
+
+{% block javascript%}
+{% endblock%}

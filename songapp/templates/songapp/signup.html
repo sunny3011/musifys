@@ -1,0 +1,59 @@
+{% extends 'songapp/base.html' %}
+
+{% block title %}signup{% endblock %}
+
+
+
+
+{% block body%}
+<div class="container mt-5" syle="padding-top:8%;">
+<form class="row g-3" method="POST" action="/songs/signup/">{% csrf_token %}
+    <div class="col-md-6">
+      <label for="validationServer01" class="form-label" >First name</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" required>
+    
+    </div>
+    <div class="col-md-6">
+      <label for="validationServer02" class="form-label" >Last name</label>
+      <input type="text" class="form-control" id="lastname"  name="lastname" required>
+      
+    </div>
+    <div class="col-md-6">
+        <label for="validationServer02" class="form-label" >user name</label>
+        <input type="text" class="form-control " id="username"  name="username" required>
+        
+      </div>
+    <div class="col-md-6">
+      <label for="validationServerUsername" class="form-label" >Email</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend3">@</span>
+        <input type="email" class="form-control " name="email" id="email" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+       
+      </div>
+    </div>
+  
+ 
+    <div class="col-md-6">
+      <label for="validationServer05" class="form-label">Password</label>
+      <input type="Password" class="form-control " id="pass1" aria-describedby="validationServer05Feedback" name="password1"required>
+    </div>
+      <div class="col-md-6">
+      <label for="validationServer05" class="form-label">Password again</label>
+      <input type="Password" class="form-control " id="pass2" aria-describedby="validationServer05Feedback"  name="password2"required>
+      
+    </div>
+    <br>
+
+   
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+  </form>
+
+{% endblock%}
+
+
+
+
+{% block javascript%}
+{% endblock%}
